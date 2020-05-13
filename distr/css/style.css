@@ -1,0 +1,227 @@
+:root {
+  --light: #fff;
+  --secondary: #2a686e;
+  --semiLight: #d6d3d3;
+  --dark__background: rgba(72, 91, 99, 0.9);
+  --shadow: 2 0 0 rgba(0, 0, 0, 0.25);
+  --font: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  height: 100%;
+}
+*::after,
+*::before,
+* {
+  box-sizing: inherit;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+  width: 100%;
+}
+.rainyState {
+  background-color: var(--secondary);
+}
+
+.container {
+  width: 1440px;
+  height: 1024px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+  background: url(.././img/jasper.png);
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 1px 1px 10px #000;
+  grid-template-areas: 'main main main main main main main aside aside aside aside aside';
+}
+.containerRain {
+  background-image: url(.././img/bolo.png);
+}
+main {
+  grid-area: main;
+  padding: 30px 0 118px 66px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: bop 1s ease-in forwards 1;
+}
+
+.main__header h1 {
+  font-size: 30px;
+  color: #d6d3d3;
+}
+.main__header span {
+  font-size: 30px;
+  color: #bd1871;
+}
+.main__content {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  padding: 5px;
+  animation: bop 1s ease-in forwards 1;
+}
+@keyframes bop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main__content > * + * {
+  margin-left: 24px;
+}
+.main__content h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 120px;
+  margin: 0;
+}
+.main__content__description,
+.main__content__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__content__description__city {
+  font-family: 'Roboto', sans-serif;
+  align-self: flex-start;
+  font-size: 50px;
+  font-weight: 400;
+  margin: 0;
+}
+.main__content__description__date {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.main__content__icon__R {
+  font-size: 40px;
+}
+
+aside {
+  grid-area: aside;
+  background-image: url(.././img/sunnyREc.png);
+}
+.asideRainy {
+  background-image: url(.././img/Rectangle.png);
+}
+form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.submit__input {
+  border: none;
+  background-color: inherit;
+  width: 380.5px;
+  height: 35px;
+  border-bottom: 1px solid white;
+  font-size: 26px;
+  color: var(--light);
+  padding: 10px;
+}
+.submit__input:focus {
+  outline: none;
+}
+.submit__input::placeholder {
+  font-size: 26px;
+  color: #d6d3d3;
+  opacity: 0.5;
+  font-family: var(--font);
+}
+
+.submit__button {
+  width: 102px;
+  height: 101px;
+  background-color: #efa144;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: 43px;
+  transition: all 0.3s ease;
+}
+.submitRainy {
+  background-color: var(--secondary);
+}
+.submit__button:hover {
+  background-color: var(--light);
+  color: var(--secondary);
+}
+.submit__button__icon {
+  font-size: 30px;
+}
+.cities {
+  animation: bop 1s ease-in forwards 1;
+  padding: 50px 144px 50px 73px;
+  position: relative;
+}
+.cities::after {
+  position: absolute;
+  content: '';
+  width: 462px;
+  height: 1px;
+  background-color: #bbb;
+  opacity: 0.6;
+  top: 100%;
+}
+.cities ul {
+  padding: 0;
+  list-style-type: none;
+}
+a,
+.cities__item--move {
+  display: block;
+  padding: 16px 0;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 200;
+  color: #ccc;
+  transition: all 0.2s ease;
+}
+a:hover {
+  transform: scale(1.1);
+  color: #fff;
+}
+.cities__item:not(first-of-type) {
+  margin-top: 15px;
+}
+.cities--overide {
+  padding: 25px 65px 23px 73px;
+}
+.cities__item--move {
+  display: flex;
+}
+.cities__item--move span {
+  margin-left: auto;
+}
+.cities__Details {
+  font-family: var(--font);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.loader {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  font-size: 82px;
+  animation: loader 2s ease-out infinite;
+}
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
