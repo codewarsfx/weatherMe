@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>weather Me</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Roboto+Condensed:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f673f835d1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/bundle.js" async defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <header class="main__header">
+          <h2>weather<span class="main__header--big">Me</span></h2>
+        </header>
+        <div class="main__content">
+          <h1 class="main__content__header">17°C</h1>
+          <div class="main__content__description">
+            <h3 class="main__content__description__city">London</h3>
+            <p class="main__content__description__date">
+              08:23-Monday 3,Sept."19
+            </p>
+          </div>
+          <div class="main__content__icon">
+            <div class="main__content__icon__R">
+              <i class="fas fa-cloud-rain"></i>
+            </div>
+            <p class="main__content__description__date p">Rainy</p>
+          </div>
+        </div>
+      </main>
+      <aside>
+        <form action="get" class="submit">
+          <input
+            class="submit__input"
+            type="text"
+            name="text"
+            id="place"
+            placeholder="Another location"
+          />
+          <button class="submit__button">
+            <div class="submit__button__icon">
+              <i class="fas fa-search"></i>
+            </div>
+          </button>
+        </form>
+        <div class="cities">
+          <ul>
+            <li class="cities__item"><a href="#">London</a></li>
+            <li class="cities__item"><a href="#">Indiana</a></li>
+            <li class="cities__item"><a href="#">Newyork</a></li>
+            <!-- <li class="cities__item"><a href="#"></a></li> -->
+            <li class="cities__item"><a href="#">Manchester</a></li>
+          </ul>
+        </div>
+        <div class="cities cities--overide">
+          <h3 class="cities__Details">Weather Details</h3>
+          <ul>
+            <li class="cities__item cities__item--move">
+              Cloudy <span class="percentages">86%</span>
+            </li>
+            <li class="cities__item cities__item--move">
+              Humidity <span class="percentages">87%</span>
+            </li>
+            <li class="cities__item cities__item--move">
+              Wind <span class="percentages">89%</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <div class="loader"><i class="fas fa-spinner"></i></div>
+  </body>
+</html>
