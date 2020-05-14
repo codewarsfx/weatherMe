@@ -97,7 +97,7 @@ main {
   align-self: flex-start;
   font-size: 50px;
   font-weight: 400;
-  margin: 0;
+  margin: 5px;
 }
 .main__content__description__date {
   font-family: 'Roboto', sans-serif;
@@ -105,7 +105,12 @@ main {
   font-weight: bold;
 }
 .main__content__icon__R {
-  font-size: 40px;
+  width: 100px;
+  height: 80px;
+}
+.main__content__icon__R img {
+  width: 100%;
+  object-fit: cover;
 }
 
 aside {
@@ -124,11 +129,12 @@ form {
   border: none;
   background-color: inherit;
   width: 380.5px;
-  height: 35px;
-  border-bottom: 1px solid white;
-  font-size: 26px;
+  text-transform: capitalize;
+  font-family: var(--font);
+  border-bottom: 1px solid #ddd;
+  font-size: 29px;
   color: var(--light);
-  padding: 10px;
+  padding: 20px;
 }
 .submit__input:focus {
   outline: none;
