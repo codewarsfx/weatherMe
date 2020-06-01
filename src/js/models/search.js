@@ -6,9 +6,10 @@ export default class Search {
   }
   async weatherSearch() {
     try {
+      let depends = Object.is(parseInt(this.query), NaN) ? 'q' : 'id';
       let src =
         typeof this.query == 'string'
-          ? `https://api.openweathermap.org/data/2.5/weather?q=${this.query}&appid=${apiKey}`
+          ? `https://api.openweathermap.org/data/2.5/weather?${depends}=${this.query}&appid=${apiKey}`
           : `https://api.openweathermap.org/data/2.5/weather?lat=${this.query[0]}&lon=${this.query[1]}&appid=${apiKey}`;
       let weatherData = await axios(src);
       this.responseData = {
@@ -19,6 +20,7 @@ export default class Search {
         humidity: weatherData.data.main.humidity,
         pressure: weatherData.data.main.pressure,
         wind: weatherData.data.wind.speed,
+        name: weatherData.data.name,
       };
       return this.responseData;
     } catch (error) {
