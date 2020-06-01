@@ -23,8 +23,6 @@ body {
   align-items: center;
   color: var(--light);
   width: 100%;
-}
-.rainyState {
   background-color: var(--secondary);
 }
 
@@ -34,16 +32,14 @@ body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 20px;
-  background: url(.././img/jasper.png);
+  background: url(.././img/bolo.png);
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 1px 1px 10px #000;
   grid-template-areas: 'main main main main main main main aside aside aside aside aside';
 }
-.containerRain {
-  background-image: url(.././img/bolo.png);
-}
+
 main {
   grid-area: main;
   padding: 30px 0 118px 66px;
@@ -59,22 +55,12 @@ main {
 }
 .main__header span {
   font-size: 30px;
-  color: #bd1871;
+  color: tomato;
 }
 .main__content {
   display: flex;
   align-items: center;
-  opacity: 0;
   padding: 5px;
-  animation: bop 1s ease-in forwards 1;
-}
-@keyframes bop {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .main__content > * + * {
@@ -115,9 +101,6 @@ main {
 
 aside {
   grid-area: aside;
-  background-image: url(.././img/sunnyREc.png);
-}
-.asideRainy {
   background-image: url(.././img/Rectangle.png);
 }
 form {
@@ -149,36 +132,34 @@ form {
 .submit__button {
   width: 102px;
   height: 101px;
-  background-color: #efa144;
-  color: #fff;
   border: none;
   cursor: pointer;
+  background-color: var(--secondary);
+  color: #fff;
   margin-left: 43px;
   transition: all 0.3s ease;
 }
-.submitRainy {
-  background-color: var(--secondary);
+.submit__button:focus {
+  outline: none;
 }
-.submit__button:hover {
-  background-color: var(--light);
-  color: var(--secondary);
+.submit__button:active {
+  transform: scale(0.9);
+}
+.submit__button:hover .submit__button__icon {
+  transform: scale(1.2);
 }
 .submit__button__icon {
   font-size: 30px;
 }
 .cities {
-  animation: bop 1s ease-in forwards 1;
-  padding: 50px 144px 50px 73px;
+  padding: 40px 144px 53px 73px;
   position: relative;
 }
-.cities::after {
-  position: absolute;
-  content: '';
-  width: 462px;
-  height: 1px;
-  background-color: #bbb;
-  opacity: 0.6;
-  top: 100%;
+.cities:first-of-type {
+  border-bottom: 1px solid #888;
+}
+.cities + .cities {
+  margin-top: 40px;
 }
 .cities ul {
   padding: 0;
@@ -221,7 +202,8 @@ a:hover {
   top: 45%;
   left: 45%;
   font-size: 82px;
-  animation: loader 2s ease-out infinite;
+  animation: loader 1.5s ease-out infinite;
+  display: none;
 }
 @keyframes loader {
   from {
